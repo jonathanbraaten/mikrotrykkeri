@@ -1,5 +1,5 @@
 import { createClient } from 'next-sanity';
-console.log(process.env.NEXT_PUBLIC_PROJECT_ID);
+
 export const sanityClient = createClient({
   projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
   dataset: 'production',

@@ -1,13 +1,12 @@
 import ResponsiveWrapper from '../ResponsiveWrapper';
 import Link from 'next/link';
-
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
       <ResponsiveWrapper className="flex flex-col gap-14 py-20">
-        <section className="flex flex-wrap gap-10">
+        <section className="flex flex-col md:flex-row md:flex-wrap gap-10">
           <div>
-            <p>Mikrotrykk</p>
+            <p className="mb-3">Mikrotrykk</p>
             <ul>
               <li>
                 <Link href={'/om-oss'}>Om oss</Link>
@@ -24,7 +23,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p> Kundeservice</p>
+            <p className="mb-3"> Kundeservice</p>
             <ul>
               <li>
                 <Link href={'/kontakt'}>Kontakt oss</Link>
@@ -38,7 +37,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <p>VIlkår og betingelser</p>
+            <p className="mb-3">Vilkår og betingelser</p>
             <ul>
               {' '}
               <li>
