@@ -16,7 +16,7 @@ export default async function PageBlockHandler() {
       {data?.blocks?.map((pageBlock) => {
         switch (pageBlock._type) {
           case 'heroPageBlock':
-            return <HeroPageBlockComponent data={pageBlock} />;
+            return <HeroPageBlockComponent key={pageBlock._key} data={pageBlock} />;
           default:
             return null;
         }
