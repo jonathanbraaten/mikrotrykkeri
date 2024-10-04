@@ -5,5 +5,9 @@ type Props = {
 };
 export default function HeroPageBlockComponent({ data }: Props) {
   console.log(data);
-  return <section></section>;
+  return (
+    <section>
+      <h1>Hero</h1>
+    </section>
+  );
 }
