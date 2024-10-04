@@ -1,3 +1,8 @@
+import NavigationMenu from './components/NavigationMenu';
 export default function Navigation() {
-  return <nav></nav>;
+  return (
+    <nav>
+      <NavigationMenu />
+    </nav>
+  );
 }
