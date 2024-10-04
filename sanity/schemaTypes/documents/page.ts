@@ -1,39 +1,58 @@
-import { defineField, defineType } from 'sanity';
+
+import { defineArrayMember, defineField, defineType } from 'sanity';
+import { IoMdDocument } from 'react-icons/io';
 
 export default defineType({
   name: 'page',
-  title: 'Forside',
   type: 'document',
+  icon: IoMdDocument,
   groups: [
     { name: 'seo', title: 'SEO' },
-    { name: 'content', title: 'Content' },
+    { name: 'blocks', title: 'Page Blocks' },
   ],
   fields: [
     defineField({
       name: 'title',
       type: 'string',
       group: 'seo',
-      description: 'The title will be used for the title tag and SEO',
+
       validation: (Rule) => Rule.required(),
+      description: 'The title for the page.',
+
     }),
     defineField({
       name: 'slug',
       type: 'slug',
-      options: { source: 'title' },
+
       validation: (Rule) => Rule.required(),
+      description: 'The slug for the page. Read only.',
+      readOnly: true,
     }),
+
     defineField({
-      name: 'metaImage',
-      type: 'image',
-      description: 'The image will be used in the meta image for SEO and Social Sharing',
-      options: { hotspot: true },
+      name: 'metaData',
       group: 'seo',
+      type: 'metaDataEmbed',
     }),
+
     defineField({
-      name: 'metaDescription',
-      type: 'text',
-      group: 'seo',
-      description: 'The description will be used for the meta description and SEO',
+      name: 'blocks',
+      type: 'array',
+      group: 'blocks',
+      of: [defineArrayMember({ title: 'Hero Banner', type: 'heroPageBlock' })],
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare(selection) {
+      const { title } = selection;
+      return { title };
+    },
+  },
+  initialValue: {
+    slug: 'hjem',
+  },
+
 });

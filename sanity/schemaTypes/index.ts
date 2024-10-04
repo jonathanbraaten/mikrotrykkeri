@@ -1,3 +1,7 @@
-import documents from './documents';
 
-export const schemaTypes = [...documents];
+import pageBlocks from './pageBlocks';
+import documents from './documents';
+import embeddedComponents from './embeddedComponents';
+
+export const schemaTypes = [...documents, ...embeddedComponents, ...pageBlocks];
+
