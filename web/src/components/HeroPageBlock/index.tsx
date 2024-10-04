@@ -6,7 +6,6 @@ type Props = {
   data: HeroPageBlock;
 };
 export default function HeroPageBlockComponent({ data }: Props) {
-  console.log(data);
   return (
     <section>
       <Image

@@ -247,8 +247,24 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../web/src/data/queries/fetchPageQuery.ts
 // Variable: PAGE_QUERY
-// Query: *[_type == 'page' && slug.current == $slug][0]{blocks[]{  ...,  _type == 'heroPageBlock'=> {    heroImage,    heroTitle,    heroDescription  }}}
+// Query: *[_type == 'page' && slug.current == $slug][0]{  "slug":slug.current,    title,   metaData{    metaDescription,    metaImage   },blocks[]{  ...,  _type == 'heroPageBlock'=> {    heroImage,    heroTitle,    heroDescription  }}}
 export type PAGE_QUERYResult = {
+  slug: string | null;
+  title: string | null;
+  metaData: {
+    metaDescription: string | null;
+    metaImage: {
+      asset?: {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: 'image';
+    } | null;
+  } | null;
   blocks: Array<{
     _key: string;
     _type: 'heroPageBlock';
@@ -273,6 +289,6 @@ export type PAGE_QUERYResult = {
 import '@sanity/client';
 declare module '@sanity/client' {
   interface SanityQueries {
-    "\n*[_type == 'page' && slug.current == $slug][0]{\nblocks[]{\n  ...,\n  _type == 'heroPageBlock'=> {\n    heroImage,\n    heroTitle,\n    heroDescription\n  }\n}}\n  ": PAGE_QUERYResult;
+    "\n*[_type == 'page' && slug.current == $slug][0]{\n  \"slug\":slug.current,\n    title,\n   metaData{\n    metaDescription,\n    metaImage\n   },\nblocks[]{\n  ...,\n  _type == 'heroPageBlock'=> {\n    heroImage,\n    heroTitle,\n    heroDescription\n  }\n}}\n  ": PAGE_QUERYResult;
   }
 }

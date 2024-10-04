@@ -5,12 +5,21 @@ import { sanityClient } from '@/data/sanityClient/sanityClient';
 import { PAGE_QUERYResult } from '@/data/types/sanity.types';
 import { PAGE_QUERY } from '@/data/queries/fetchPageQuery';
 import { notFound } from 'next/navigation';
-async function getPage(): Promise<PAGE_QUERYResult> {
-  const pageData = await sanityClient.fetch(PAGE_QUERY, { slug: 'hjem' });
+
+async function getPage(slug: string): Promise<PAGE_QUERYResult> {
+  const pageData = await sanityClient.fetch(PAGE_QUERY, { slug });
   return pageData;
 }
+export async function generateMetadata() {
+  const page = await getPage('hjem');
+  return {
+    title: page?.title ? page?.title : 'Hosanger Mikrotrykkeri - Forsiden',
+    description: page?.metaData?.metaDescription || 'Hosanger Mikrotrykkeri',
+  };
+}
+
 export default async function Home() {
-  const page = await getPage();
+  const page = await getPage('hjem');
   if (!page) {
     return notFound();
   }
