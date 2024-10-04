@@ -38,6 +38,15 @@ export default defineType({
       of: [defineArrayMember({ title: 'Hero Banner', type: 'heroPageBlock' })],
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare(selection) {
+      const { title } = selection;
+      return { title };
+    },
+  },
   initialValue: {
     slug: 'hjem',
   },
