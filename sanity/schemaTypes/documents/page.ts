@@ -1,3 +1,4 @@
+
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { IoMdDocument } from 'react-icons/io';
 
@@ -14,12 +15,15 @@ export default defineType({
       name: 'title',
       type: 'string',
       group: 'seo',
+
       validation: (Rule) => Rule.required(),
       description: 'The title for the page.',
+
     }),
     defineField({
       name: 'slug',
       type: 'slug',
+
       validation: (Rule) => Rule.required(),
       description: 'The slug for the page. Read only.',
       readOnly: true,
@@ -50,4 +54,5 @@ export default defineType({
   initialValue: {
     slug: 'hjem',
   },
+
 });
