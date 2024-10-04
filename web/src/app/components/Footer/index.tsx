@@ -1,3 +1,9 @@
+import ResponsiveWrapper from '../ResponsiveWrapper';
+
 export default function Footer() {
-  return <footer></footer>;
+  return (
+    <footer>
+      <ResponsiveWrapper>footer</ResponsiveWrapper>
+    </footer>
+  );
 }
