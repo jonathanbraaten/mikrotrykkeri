@@ -1,8 +1,8 @@
-import { defineArrayMember, defineField, defineType } from 'sanity';
+import { defineField, defineType } from 'sanity';
 import { IoMdDocument } from 'react-icons/io';
 
 export default defineType({
-  name: 'page',
+  name: 'about',
   type: 'document',
   icon: IoMdDocument,
   groups: [
@@ -14,14 +14,12 @@ export default defineType({
       name: 'title',
       type: 'string',
       group: 'seo',
-
       validation: (Rule) => Rule.required(),
       description: 'The title for the page.',
     }),
     defineField({
       name: 'slug',
       type: 'slug',
-
       validation: (Rule) => Rule.required(),
       description: 'The slug for the page. Do not modify.',
     }),
@@ -33,10 +31,8 @@ export default defineType({
     }),
 
     defineField({
-      name: 'blocks',
-      type: 'array',
-      group: 'blocks',
-      of: [defineArrayMember({ title: 'Hero Banner', type: 'heroPageBlock' })],
+      name: 'content',
+      type: 'fullPortableText',
     }),
   ],
   preview: {

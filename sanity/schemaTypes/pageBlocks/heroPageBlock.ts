@@ -18,6 +18,10 @@ export default defineType({
       name: 'heroImage',
       title: 'Hero Image',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
+
       fields: [
         {
           name: 'alt',

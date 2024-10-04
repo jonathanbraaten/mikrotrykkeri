@@ -1,3 +1,4 @@
+import fullPortableText from './fullPortableText';
 import metaDataEmbed from './metaDataEmbed';
 
-export default [metaDataEmbed];
+export default [metaDataEmbed, fullPortableText];
