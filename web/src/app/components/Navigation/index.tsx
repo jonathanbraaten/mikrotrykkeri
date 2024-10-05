@@ -34,10 +34,13 @@ export default function Navigation({ isActive, onClick }: Props) {
   const pathName = usePathname();
   return (
     <nav
-      className={clsx('bg-white p-4 border flex flex-col gap-4  fixed  md:static right-0 top-0 ', {
-        'translate-x-0 transition-transform 150ms ease-in-out': isActive,
-        'translate-x-full ': !isActive,
-      })}
+      className={clsx(
+        'bg-white p-4 flex flex-col md:flex-row gap-4  fixed  md:static right-0 top-0 md:translate-x-0',
+        {
+          'translate-x-0 transition-transform 150ms ease-in-out': isActive,
+          'translate-x-full ': !isActive,
+        },
+      )}
     >
       <div className="hidden md:block">
         <p className="uppercase font-bold">Mikrotrykk</p>

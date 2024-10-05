@@ -16,7 +16,7 @@ export default function Header() {
           <p className="uppercase font-bold">MIKROTRYKk</p>
         </div>
         <Navigation isActive={isActive} onClick={closeNavigation} />
-        <div className="flex  gap-4">
+        <div className="flex items-center  gap-4">
           <MdOutlineShoppingBag size={24} />
           <button
             onClick={openNavigation}

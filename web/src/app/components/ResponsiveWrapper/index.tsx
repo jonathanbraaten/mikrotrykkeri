@@ -5,5 +5,5 @@ type ResponsiveWrapperProps = {
   children: React.ReactNode;
 };
 export default function ResponsiveWrapper({ className, children }: ResponsiveWrapperProps) {
-  return <div className={clsx(className, 'max-w-[95%] mx-auto')}>{children}</div>;
+  return <div className={clsx(className, 'max-w-[80%] mx-auto')}>{children}</div>;
 }
