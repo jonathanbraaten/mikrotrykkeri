@@ -25,20 +25,27 @@ export const links = [
     path: '/kontakt-oss',
   },
 ];
-export default function Navigation() {
-  const active = false;
+type Props = {
+  isActive: boolean;
+  onClick: () => void;
+};
+export default function Navigation({ isActive, onClick }: Props) {
+  console.log(isActive);
   const pathName = usePathname();
   return (
     <nav
-      className={clsx('flex gap-4  fixed  md:static right-0 top-0 ', {
-        'translate-x-0': !active,
-        'translate-x-full transition-transform 150ms ease-in-out': active,
+      className={clsx('bg-white p-4 border flex flex-col gap-4  fixed  md:static right-0 top-0 ', {
+        'translate-x-0 transition-transform 150ms ease-in-out': isActive,
+        'translate-x-full ': !isActive,
       })}
     >
       <div className="hidden md:block">
         <p className="uppercase font-bold">Mikrotrykk</p>
       </div>
 
+      <button onClick={onClick} className="md:hidden">
+        Close Menu
+      </button>
       <ul className="flex flex-col md:flex-row gap-6">
         {links.map(({ id, name, path }) => (
           <li
