@@ -22,7 +22,7 @@ export const links = [
   {
     id: 4,
     name: 'Kontakt oss',
-    path: '/kontakt-oss',
+    path: '/kontakt',
   },
 ];
 type Props = {
