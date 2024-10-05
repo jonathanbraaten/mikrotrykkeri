@@ -4,6 +4,8 @@ import Navigation from '../Navigation';
 import { MdOutlineShoppingBag } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { useState } from 'react';
+import Hamburger from './components/hamburger';
+import HamburgerButton from './components/hamburger';
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -18,13 +20,7 @@ export default function Header() {
         <Navigation isActive={isActive} onClick={closeNavigation} />
         <div className="flex items-center  gap-4">
           <MdOutlineShoppingBag size={24} />
-          <button
-            onClick={openNavigation}
-            className="flex gap-1 bg-slate-100 rounded-full py-1 px-2 md:hidden"
-          >
-            <span> Meny</span>
-            <RxHamburgerMenu size={24} />
-          </button>
+          <HamburgerButton onClick={openNavigation} />
         </div>
       </ResponsiveWrapper>
     </header>
