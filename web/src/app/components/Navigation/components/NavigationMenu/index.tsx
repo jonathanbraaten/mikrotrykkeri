@@ -1,4 +1,7 @@
+'use client';
+import clsx from 'clsx';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export const links = [
   {
@@ -23,10 +26,16 @@ export const links = [
   },
 ];
 export default function NavigationMenu() {
+  const pathName = usePathname();
   return (
-    <ul className="flex gap-2">
+    <ul className="flex gap-6">
       {links.map(({ id, name, path }) => (
-        <li key={id}>
+        <li
+          className={clsx('hover:underline', {
+            underline: pathName === path,
+          })}
+          key={id}
+        >
           <Link href={path}>{name}</Link>
         </li>
       ))}

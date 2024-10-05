@@ -7,7 +7,7 @@ export default function Footer() {
         <section className="flex flex-col md:flex-row md:flex-wrap gap-10">
           <div>
             <p className="mb-3">Mikrotrykk</p>
-            <ul>
+            <ul className="flex flex-col gap-1">
               <li>
                 <Link href={'/om-oss'}>Om oss</Link>
               </li>
@@ -24,7 +24,7 @@ export default function Footer() {
 
           <div>
             <p className="mb-3"> Kundeservice</p>
-            <ul>
+            <ul className="flex flex-col gap-1">
               <li>
                 <Link href={'/kontakt'}>Kontakt oss</Link>
               </li>
@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
           <div>
             <p className="mb-3">Vilkår og betingelser</p>
-            <ul>
+            <ul className="flex flex-col gap-1">
               {' '}
               <li>
                 <Link href={''}>Kjøpsvilkår</Link>
@@ -56,7 +56,9 @@ export default function Footer() {
           </div>
         </section>
         <hr />
-        <span>@2024 Hosanger Mikrotrykkeri AS.</span>
+        <span className="flex gap-3">
+          © <span>2024 Hosanger Mikrotrykkeri AS.</span>
+        </span>
       </ResponsiveWrapper>
     </footer>
   );
