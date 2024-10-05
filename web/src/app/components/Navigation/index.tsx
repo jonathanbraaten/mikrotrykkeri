@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export const links = [
+export const navigationLinks = [
   {
     id: 1,
     name: 'Hjem',
@@ -30,7 +30,6 @@ type Props = {
   onClick: () => void;
 };
 export default function Navigation({ isActive, onClick }: Props) {
-  console.log(isActive);
   const pathName = usePathname();
   return (
     <nav
@@ -50,7 +49,7 @@ export default function Navigation({ isActive, onClick }: Props) {
         Close Menu
       </button>
       <ul className="flex flex-col md:flex-row gap-6">
-        {links.map(({ id, name, path }) => (
+        {navigationLinks.map(({ id, name, path }) => (
           <li
             className={clsx('hover:underline', {
               underline: pathName === path,
