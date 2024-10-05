@@ -35,7 +35,7 @@ export default function Navigation({ isActive, onClick }: Props) {
   return (
     <nav
       className={clsx(
-        'bg-white p-4 flex flex-col md:flex-row gap-4  fixed  md:static right-0 top-0 md:translate-x-0',
+        'bg-white py-4 flex flex-col md:flex-row gap-4  fixed  md:static right-0 top-0 md:translate-x-0',
         {
           'translate-x-0 transition-transform 150ms ease-in-out': isActive,
           'translate-x-full ': !isActive,
