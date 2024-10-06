@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const contactShcema = z
+export const contactSchema = z
   .object({
     email: z.string().min(1, {
       message: 'Vennligst bruk en godkjent e-post adresse',

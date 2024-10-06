@@ -1,7 +1,7 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { contactShcema } from './schema';
+import { contactSchema } from './contactSchema';
 import { ChangeEvent, useState } from 'react';
 import { MdErrorOutline } from 'react-icons/md';
 type FormData = {
@@ -16,7 +16,7 @@ export default function ContactForm() {
     handleSubmit,
 
     formState: { errors },
-  } = useForm<FormData>({ resolver: zodResolver(contactShcema) });
+  } = useForm<FormData>({ resolver: zodResolver(contactSchema) });
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleSelectedOption = (e: ChangeEvent<HTMLSelectElement>) => {
