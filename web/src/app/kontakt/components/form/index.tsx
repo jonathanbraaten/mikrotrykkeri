@@ -10,7 +10,7 @@ type FormData = {
   message: string;
 };
 
-export default function ContactForm() {
+export default function Form() {
   const {
     register,
     handleSubmit,

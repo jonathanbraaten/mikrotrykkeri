@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import ResponsiveWrapper from '../components/ResponsiveWrapper';
-import ContactForm from './components/Form';
+import Form from './components/Form';
 
 export const metadata: Metadata = {
   title: 'Hosanger Mikrotrykkeri - Kontakt',
@@ -16,7 +16,7 @@ export default function Page() {
         <ResponsiveWrapper>
           <section>
             <h1>Kontakt oss</h1>
-            <ContactForm />
+            <Form />
           </section>
         </ResponsiveWrapper>
       </main>
