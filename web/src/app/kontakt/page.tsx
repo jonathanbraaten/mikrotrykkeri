@@ -5,7 +5,7 @@ import ResponsiveWrapper from '../components/ResponsiveWrapper';
 import ContactForm from './components/Form';
 
 export const metadata: Metadata = {
-  title: 'Hosanger Mikrotrykkeri - Kontakt oss',
+  title: 'Hosanger Mikrotrykkeri - Kontakt',
   description: '',
 };
 export default function Page() {
