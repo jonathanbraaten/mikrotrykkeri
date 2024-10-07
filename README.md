@@ -1,3 +1,3 @@
 # mikrotrykkeri
 
-Webpage for Hosanger Mikrotrykkeri
+Monorepo for Hosanger Mikrotrykkeri webpage
