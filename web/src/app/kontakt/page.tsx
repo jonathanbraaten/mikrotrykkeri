@@ -13,8 +13,8 @@ export default function Page() {
     <>
       <Header />
       <main>
-        <ResponsiveWrapper>
-          <section>
+        <ResponsiveWrapper className="max-w-[45rem] w-full px-2">
+          <section className="my-10 flex flex-col gap-5">
             <h1>Kontakt oss</h1>
             <Form />
           </section>

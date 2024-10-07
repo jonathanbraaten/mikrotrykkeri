@@ -36,7 +36,7 @@ export default function Form() {
   console.log(errors);
 
   return (
-    <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
+    <form className="flex flex-col gap-2  w-full " onSubmit={handleSubmit(onSubmit)}>
       <label className="flex flex-col " htmlFor="email">
         Oppgi din e-postadresse
         <input className="border p-2" type="email" {...register('email')} />
@@ -96,7 +96,9 @@ export default function Form() {
           </div>
         </label>
       </label>
-      <button type="submit">Send</button>
+      <button className="bg-black text-white self-start px-10 py-2 rounded-full" type="submit">
+        Send
+      </button>
     </form>
   );
 }
